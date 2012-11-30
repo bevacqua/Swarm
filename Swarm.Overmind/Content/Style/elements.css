@@ -1,0 +1,49 @@
+﻿/* HEADINGS
+----------------------------------------------------------*/
+
+h1 { font-size: 1.6em; }
+
+h2 { font-size: 1.5em; }
+
+h3 { font-size: 1.4em; }
+
+h4 { font-size: 1.3em; }
+
+h5 { font-size: 1.2em; }
+
+h6 { font-size: 1.1em; }
+
+
+/* HTML ELEMENTS
+----------------------------------------------------------*/
+
+hr {
+    border: 0 none;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    margin-bottom: 10px;
+    padding: 10px 10px 1px;
+}
+
+pre, code { font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif; }
+
+pre {
+    margin-bottom: 10px;
+    max-height: 600px;
+    overflow: auto;
+    padding: 5px;
+    width: auto;
+}
+
+b, strong, .bold { font-weight: bold; }
+
+i, em, .italic { font-style: italic; }
+
+ins { text-decoration: none; }
+
+del { text-decoration: line-through; }
+
+img { border: none; }

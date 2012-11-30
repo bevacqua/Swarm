@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE9DCCD0-D5AA-4AFF-9C42-34E325D1FD7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Swarm.Common.Mvc</RootNamespace>
+    <AssemblyName>Swarm.Common.Mvc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentValidation.3.4.6.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=3.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentValidation.MVC3.3.4.6.0\lib\Net40\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler">
+      <HintPath>..\packages\MiniProfiler.2.0.2\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\packages\SignalR.Server.0.5.2\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.Common">
+      <HintPath>..\packages\SignalR.Hosting.Common.0.5.2\lib\net40\SignalR.Hosting.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\packages\SquishIt.0.9.0-alpha3\lib\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Less">
+      <HintPath>..\packages\SquishIt.Less.0.9.0-alpha3\lib\SquishIt.Less.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Core\ActionFilters\AjaxTransformFilter.cs" />
+    <Compile Include="Core\ErrorHandling\ChildActionExceptionFilter.cs" />
+    <Compile Include="HttpModules\Wiring\ApplicationModuleAttribute.cs" />
+    <Compile Include="HttpModules\Wiring\ApplicationModuleManager.cs" />
+    <Compile Include="HttpModules\Wiring\IApplicationModuleManager.cs" />
+    <Compile Include="Interface\IDebugDetailsRoleAccesor.cs" />
+    <Compile Include="Interface\IJavaScriptHelper.cs" />
+    <Compile Include="Exceptions\HttpNotFoundException.cs" />
+    <Compile Include="Core\ActionResults\Json\AjaxViewJsonResult.cs" />
+    <Compile Include="Core\ActionResults\NotFoundResult.cs" />
+    <Compile Include="Core\ActionResults\Json\ExceptionJsonResult.cs" />
+    <Compile Include="Core\ActionResults\Json\ModelStateValidationJsonResult.cs" />
+    <Compile Include="Core\ActionResults\RssActionResult.cs" />
+    <Compile Include="Core\Attributes\ExtendedAuthorizeAttribute.cs" />
+    <Compile Include="Core\Attributes\MethodConstraintAttribute.cs" />
+    <Compile Include="Core\ActionResults\Json\JsonRedirectResult.cs" />
+    <Compile Include="Core\Attributes\NotAjaxAttribute.cs" />
+    <Compile Include="Core\Attributes\AjaxOnlyAttribute.cs" />
+    <Compile Include="Core\ActionResults\RedirectToHomeResult.cs" />
+    <Compile Include="Core\Controllers\ErrorController.cs" />
+    <Compile Include="Core\Controllers\ResourceController.cs" />
+    <Compile Include="Core\Controllers\ExtendedController.cs" />
+    <Compile Include="Core\Engine\ExtendedView.cs" />
+    <Compile Include="Core\Engine\ExtendedViewEngine.cs" />
+    <Compile Include="Core\Controllers\StringRenderingController.cs" />
+    <Compile Include="Core\Engine\ExtendedControllerContext.cs" />
+    <Compile Include="Extensions\BundleBase`1.cs" />
+    <Compile Include="Extensions\Exception.cs" />
+    <Compile Include="Extensions\HttpContextExtensions.cs" />
+    <Compile Include="Extensions\HttpRequestBase.cs" />
+    <Compile Include="FluentValidation\NullModelValidator.cs" />
+    <Compile Include="Core\Helpers\MvcResourceHelper.cs" />
+    <Compile Include="Extensions\IView.cs" />
+    <Compile Include="HttpModules\LogModule.cs" />
+    <Compile Include="HttpModules\ErrorHandlerModule.cs" />
+    <Compile Include="HttpModules\HeaderCleanupModule.cs" />
+    <Compile Include="HttpModules\MiniProfilerModule.cs" />
+    <Compile Include="HttpModules\RequestSanitizerModule.cs" />
+    <Compile Include="Interface\IMvcResourceHelper.cs" />
+    <Compile Include="Interface\IUrlHelper.cs" />
+    <Compile Include="Interface\IUrlShortener.cs" />
+    <Compile Include="Utility\GoogleUrlShortener.cs" />
+    <Compile Include="Utility\UrlHelperWrapper.cs" />
+    <Compile Include="IoC\Installers\SignalRInstaller.cs" />
+    <Compile Include="IoC\Installers\HttpModuleInstaller.cs" />
+    <Compile Include="IoC\MvcInfrastructure.cs" />
+    <Compile Include="IoC\Mvc\ActionInvokerFilters.cs" />
+    <Compile Include="IoC\Installers\MvcComponentInstaller.cs" />
+    <Compile Include="IoC\Mvc\MvcInstallerParameters.cs" />
+    <Compile Include="IoC\Installers\SquishItInstaller.cs" />
+    <Compile Include="IoC\Installers\AspNetInstaller.cs" />
+    <Compile Include="IoC\Installers\MvcUtilityInstaller.cs" />
+    <Compile Include="IoC\Installers\MvcInstaller.cs" />
+    <Compile Include="IoC\Installers\MvcControllerInstaller.cs" />
+    <Compile Include="IoC\Installers\MvcModelBinderInstaller.cs" />
+    <Compile Include="IoC\Installers\MvcModelValidatorInstaller.cs" />
+    <Compile Include="IoC\Installers\MvcViewInstaller.cs" />
+    <Compile Include="IoC\Mvc\ModelTypeAttribute.cs" />
+    <Compile Include="IoC\Mvc\WindsorActionInvoker.cs" />
+    <Compile Include="Core\ErrorHandling\HttpApplicationErrorHander.cs" />
+    <Compile Include="Extensions\HttpRequest.cs" />
+    <Compile Include="log4net\RequestUrlPattern.cs" />
+    <Compile Include="Core\Routing\EnumRouteConstraint.cs" />
+    <Compile Include="Core\Engine\ExtendedWebViewPage.cs" />
+    <Compile Include="Core\Helpers\JavaScriptHelper.cs" />
+    <Compile Include="Extensions\RouteData.cs" />
+    <Compile Include="Interface\IResourceCompressor.cs" />
+    <Compile Include="SignalR\Extensions\HubJavaScriptMinifier.cs" />
+    <Compile Include="SignalR\HubContextWrapper.cs" />
+    <Compile Include="Interface\IHubContextWrapper.cs" />
+    <Compile Include="IoC\SignalR\WindsorDependencyResolver.cs" />
+    <Compile Include="Utility\RequestSanitizer.cs" />
+    <Compile Include="IoC\Mvc\WindsorModelBinderProvider.cs" />
+    <Compile Include="IoC\Membership\WindsorRoleProviderMvc.cs" />
+    <Compile Include="IoC\Membership\WindsorRoleProvider.cs" />
+    <Compile Include="IoC\Membership\WindsorMembershipProviderMvc.cs" />
+    <Compile Include="IoC\Mvc\WindsorValidatorFactory.cs" />
+    <Compile Include="IoC\Mvc\WindsorControllerFactory.cs" />
+    <Compile Include="Core\Routing\LowercaseRoute.cs" />
+    <Compile Include="IoC\Membership\WindsorMembershipProvider.cs" />
+    <Compile Include="IoC\Membership\DefaultMembershipProvider.cs" />
+    <Compile Include="IoC\Membership\FormsAuthenticationWrapper.cs" />
+    <Compile Include="IoC\Membership\IFormsAuthentication.cs" />
+    <Compile Include="IoC\Membership\IMembershipProvider.cs" />
+    <Compile Include="Core\Models\ErrorViewModel.cs" />
+    <Compile Include="Core\Models\ResourceLocalizationModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extensions\RouteCollection.cs" />
+    <Compile Include="Utility\ExceptionHelper.cs" />
+    <Compile Include="Core\Routing\UrlConstraint.cs" />
+    <Compile Include="Utility\ResourceCompressor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Swarm.Common\Swarm.Common.csproj">
+      <Project>{8069E6E0-91C4-4BC2-A490-80A5674F6CFC}</Project>
+      <Name>Swarm.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="unrecoverable.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="unrecoverable.exception.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

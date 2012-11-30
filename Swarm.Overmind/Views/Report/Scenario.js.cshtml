@@ -1,0 +1,10 @@
+﻿@model ReportViewModel
+<script>
+	(function ($, o) {
+		o.views.report.scenario.init(
+			@Model.Json,
+			"@Url.Action("Abort", "Scenario", new { executionId = Model.Report.ExecutionId })"
+		);
+ 	    o.realtime.listen('@Url.Content("~/realtime/hubs")');
+	})(jQuery, overmind);
+</script>

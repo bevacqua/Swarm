@@ -1,0 +1,25 @@
+﻿@model Exception
+@{
+    object sql = Model.Data["SQL"];
+}
+<article class="exception">
+    <header>@Model.Message</header>
+    @if (sql != null)
+    {
+        <section class="sql">
+            <pre>@sql</pre>
+        </section>
+    }
+    @if (Model.StackTrace != null)
+    {
+        <section class="stacktrace">
+			@Html.DisplayFor(m => m.StackTrace)
+		</section>
+    }
+    @if (Model.InnerException != null)
+    {
+        <section class="inner">
+			@Html.DisplayFor(m => m.InnerException)
+		</section>
+    }
+</article>

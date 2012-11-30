@@ -1,0 +1,25 @@
+﻿@model AggregateException
+@{
+    object sql = Model.Data["SQL"];
+}
+<article class="exception">
+    <header>@Model.Message</header>
+    @if (sql != null)
+    {
+        <section class="sql">
+            <pre>@sql</pre>
+        </section>
+    }
+    @if (Model.StackTrace != null)
+    {
+        <section class="stacktrace">
+			@Html.DisplayFor(m => m.StackTrace)
+		</section>
+    }
+    @foreach (Exception exception in Model.InnerExceptions)
+    {
+        <section class="inner">
+			@Html.DisplayFor(m => exception)
+		</section>
+    }
+</article>

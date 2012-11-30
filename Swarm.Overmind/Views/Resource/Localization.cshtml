@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ResourceLocalizationModel>
+; (function (window) {
+var l = {
+@foreach (ResourceLocalizationModel file in Model)
+{@:@file.Title: {
+    foreach (var entry in file.Items)
+    {@:@entry.Key: @Html.Raw(@HttpUtility.JavaScriptStringEncode(entry.Value.ToString(), true)),
+    }
+    @:},
+}
+};
+
+// expose the l object to the global namespace.
+window.localization = l;
+})(window);

@@ -1,0 +1,134 @@
+﻿@*@model *@
+<script>
+   
+    // getElementById
+    function $id(id) {
+        return document.getElementById(id);
+    }
+    
+    // output information
+    function Output(msg) {
+        var m = $id("filedrag");
+        m.innerHTML = msg + m.innerHTML;
+    }
+
+
+    // file drag hover
+    function FileDragHover(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $("#multiupload-alert").hide();
+        e.target.className = (e.type == "dragover" ? "hover" : "");
+    }
+    
+    // file selection
+    function FileSelectHandler(e) {
+
+        // cancel event and hover styling
+        FileDragHover(e);
+
+        // fetch FileList object
+        var files = e.target.files || e.dataTransfer.files;
+
+        // process all File objects
+        for (var i = 0, f; f = files[i]; i++) {
+            handleFiles(f);
+        }
+    }
+
+    // initialize
+    function Init() {
+
+        var fileselect = $id("fileselect"),
+            filedrag = $id("filedrag");
+
+        // file select
+        $("#multiupload-alert").hide();
+        fileselect.addEventListener("change", FileSelectHandler, false);
+
+        // is XHR2 available?
+        var xhr = new XMLHttpRequest();
+        if (xhr.upload) {
+
+            // file drop
+            filedrag.addEventListener("dragover", FileDragHover, false);
+            filedrag.addEventListener("dragleave", FileDragHover, false);
+            filedrag.addEventListener("drop", FileSelectHandler, false);
+            filedrag.style.display = "block";
+        }
+    }
+
+    function handleFiles(file) {
+        var validFileExtensions = ["csv"];
+        var extension = file.name.split('.').pop();
+        
+        if (validFileExtensions.indexOf(extension) != -1) {
+             
+            var reader = new FileReader();
+            reader.onloadend = handleReaderLoadEnd;
+
+            // begin the read operation            
+            reader.readAsDataURL(file);
+            this.UploadFile(file);
+        
+            return true;
+        }
+        else {
+            var message = "File type not valid. Only csv files are allowed.";
+            $("#multiupload-alert-message").html(message);
+            $("#multiupload-alert").show();
+            return false;
+        }
+    }
+
+    function handleReaderProgress(evt) {
+        if (evt.lengthComputable) {
+            var loaded = (evt.loaded / evt.total);
+            var progress = loaded * 100;
+            $(".bar").css("width", progress + "%");
+        }
+    }
+
+    function handleReaderLoadEnd() {
+        $("#progressBarBox").show("fast");
+        $(".bar").css("width", "0%");
+    }
+
+    // Uploads a file to the server
+    function UploadFile(file) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.addEventListener("loadstart",function() {
+            $(".bar").css("width", "0%");
+        },false);
+
+        xhr.upload.addEventListener("progress", function (evt) {
+            if (evt.lengthComputable) {
+                var percentageUploaded = parseInt(100 - (evt.loaded / evt.total * 100));
+                $(".bar").css("width", percentageUploaded + "%");
+            }
+        }, false);
+        
+        // File uploaded
+        xhr.addEventListener("load", function () {
+            $(".bar").css("width", "100%");
+        }, false);
+
+        xhr.addEventListener("loadend", function () {
+          //  location.reload();
+        }, false);
+        
+        xhr.open("POST", '@Url.Action("UploadFile","FileUpload")', true);
+        // Set appropriate headers        
+        xhr.setRequestHeader("Content-Type", "multipart/form-data");
+        xhr.setRequestHeader("X-File-Name", file.name);
+        // Send the file                  
+        xhr.send(file);
+    }
+
+    // call initialization file
+    if (window.File && window.FileList && window.FileReader) {
+        Init();
+    }
+   
+</script>

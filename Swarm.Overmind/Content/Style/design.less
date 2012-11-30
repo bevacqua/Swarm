@@ -1,0 +1,179 @@
+﻿@import "functions.less";
+
+@info_text: #fff;
+@info_bg: #FF8C00;
+@info_border: #CC8C00;
+
+@error_text: #fff;
+@error_bg: #CE756B;
+@error_border: #9D0000;
+
+
+
+/* DEFAULTS
+----------------------------------------------------------*/
+
+body {
+	font-family: "Helvetica Neue","Lucida Grande","Segoe UI",Arial,Helvetica,Verdana,sans-serif;
+}
+
+
+
+/* WIREFRAME
+----------------------------------------------------------*/
+
+#layout-header h1 {	
+	font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 2.4em;
+}
+
+@media only screen and (min-width: 768px) {
+	#layout-header h1 {	
+		font-size: 3.2em;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	#layout-header h1 {	
+		font-size: 4.6em;
+	}
+}
+
+
+/* NAVIGATION MENU
+----------------------------------------------------------*/
+
+#menu-icon {
+    color: #fff;
+    background: #4e4e4e;
+    text-transform: uppercase;
+    text-decoration: none;
+	.box_round(3px);
+}
+
+#menu ul {
+    background: #1c1c1c;
+    cursor: default;
+}
+ 
+#menu li span {
+    color: #fff;
+}
+#menu li a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #383838;
+}
+ 
+#menu li a:hover,
+#menu li a:focus {
+    color: #1c1c1c;
+    background: #ccc;
+}
+
+@media only screen and (min-width: 768px) {
+	#menu ul {
+		.box_round(4px);
+	}
+	#menu li a {
+		.box_round(2px);
+		border-bottom: inherit;
+	}
+}
+
+
+
+/* BUTTONS
+----------------------------------------------------------*/
+
+a { 
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a, button, input[type=submit] {
+    cursor: pointer;
+}
+button.disabled {
+	cursor: not-allowed;
+}
+nav a, button, input[type=submit] {
+	font-variant: small-caps;
+}
+
+input[type=submit],
+button {
+	border: 1px solid #313131;
+	background-color: #dbdbdb;
+	color: #171515;
+}
+
+button {
+	display: inline-block;
+    padding: 8px;
+}
+
+
+/* FORMS
+----------------------------------------------------------*/
+
+/* we'd rather avoid using these, but they *can* be used to style placeholder colors */
+/*
+::-webkit-input-placeholder,
+    ::-ms-input-placeholder,
+         ::-moz-placeholder {
+}
+*/
+/* using very light colors because of placeholder values being grayed, and changing that seems rather inappropriate */
+form input.valid { 
+	background-color: #f0ffff;
+}
+
+form input.input-validation-error {
+	background-color: #fff0ff;
+}
+
+
+
+/* NOSCRIPT
+----------------------------------------------------------*/
+
+#noscript-notice {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+	background-color: @error_bg;
+	color: @error_text;
+	border-bottom: 2px solid @error_border;
+	cursor: not-allowed;
+}
+#noscript-notice a {
+	text-decoration: underline;
+}
+
+
+
+/* DIALOGS
+----------------------------------------------------------*/
+
+.dialog {
+	background-color: #fff;
+	border: 2px solid #222;
+}
+
+.dialog.notification {
+	.box_shadow(2px 2px 5px #400);
+    color: #fff;
+}
+
+.dialog.notification.notification-error {
+    background-color: @error_bg;
+	border: 2px solid @error_border;
+}
+
+.dialog.notification.notification-message {
+    background-color: @info_bg;
+	border: 2px solid @info_border;	
+}

@@ -1,0 +1,133 @@
+﻿/* BASIC LAYOUT
+----------------------------------------------------------*/
+
+body {
+    word-wrap: break-word;
+    overflow-x: hidden;
+}
+
+.layout-section {
+    width: 93.75%; /* 300px on 320px */
+    margin: 0 auto;
+    text-align: left;
+}
+
+#layout-header {
+    padding: 12px 0;
+    margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    #layout-header { margin-bottom: 30px; }
+}
+
+@media only screen and (min-width: 1024px) {
+    #layout-header { margin-bottom: 40px; }
+}
+
+#layout-header h1 {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#layout-content { padding: 6px 0; }
+
+#layout-content h1 { margin-bottom: 12px; }
+
+
+
+/* NOSCRIPT LAYOUT
+----------------------------------------------------------*/
+
+#noscript-padding { padding-bottom: 37px; }
+
+@media only screen and (min-width: 768px) {
+    #noscript-padding { padding-bottom: 22px; }
+}
+
+@media only screen\0 {
+    /* IE-only media hack */
+    #noscript-padding { padding-bottom: 67px; }
+}
+
+@media only screen\0 and (min-width: 768px) {
+    /* IE-only media hack */
+    #noscript-padding { padding-bottom: 47px; }
+}
+
+#noscript-notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    text-align: center;
+    padding: 6px 0;
+}
+
+#noscript-notice .ie-warning { padding-top: 6px; }
+
+
+
+/* NAVIGATION MENU
+----------------------------------------------------------*/
+
+#menu-icon {
+    float: right;
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 22px;
+    height: 22px;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+}
+
+#menu { margin-top: 30px; }
+
+#menu ul { padding: 5px 0; }
+
+#menu li a {
+    display: block;
+    padding: 0 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    height: 2em;
+    background-color: #393939;
+}
+
+#menu li:last-child a { border-bottom: none; }
+#menu .logout-identifier { display: none; }
+
+@media only screen and (min-width: 768px) {
+    #layout-content { position: relative; }
+
+    #menu {
+        margin-top: 0;
+        position: absolute;
+        top: 16px;
+        right: 3.125%;
+        max-width: 45%;
+    }
+
+    #menu ul { padding: 5px 5px; }
+
+    #menu-icon,
+    #menu li.nav-top { display: none; }
+
+    #menu li { display: inline-block; }
+
+    #menu li a {
+        float: left;
+        border: none;
+        padding: 0 10px;
+    }
+
+    #menu .logout-identifier { display: inline; }
+}
+
+@media only screen and (min-width: 1024px) {
+    #menu { top: 28px; }
+}

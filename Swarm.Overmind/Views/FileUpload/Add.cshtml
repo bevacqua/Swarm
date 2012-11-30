@@ -1,0 +1,25 @@
+﻿@using System.Web.Mvc.Html
+@model IList<FileUploadModel>
+
+<fieldset>
+	<div>
+		<label for="fileselect">Files to upload:</label>
+		<input type="file" id="fileselect" name="fileSelectList" multiple="multiple" accept=".csv"/>
+		<div id="filedrag">
+			@foreach(var item in Model)
+			{
+				<p>File information: <strong>@item.Filename</strong>
+		        @Html.ActionLink("X","RemoveFile", new { code = item.Code }, new { @class="deleteFileButton" } )</p>
+			}
+            <div id="multiupload-alert" class="alert alert-error" style="display: none">            
+                <h4 class="alert-heading">Warning!</h4>      
+                <span id="multiupload-alert-message"></span>      
+            </div>  
+		</div>
+	</div>
+	<div id="progressBarBox" class="progress progress-info progress-striped">
+		<div class="bar"></div>
+	</div>    
+</fieldset>
+
+

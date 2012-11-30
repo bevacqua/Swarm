@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutHtml.cshtml";
+
+	string siteName = Resource.Shared("Application", "Title");
+    string startYear = Resource.String("StartYear");
+    string copyright = Resource.String("Copyright", siteName, startYear, DateTime.UtcNow.Year);
+}
+<section id="layout-container">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <section id="layout-body" class="layout-section">
+        <header id="layout-header">
+            <h1>
+                <a href="/" title="@Resource.Shared("Application", "Description")">@siteName</a>
+            </h1>
+            <a id="menu-icon" href="#menu">@Resource.String("Menu")</a>
+        </header>
+        <section id="layout-content">
+            @RenderBody()
+        </section>
+    </section>
+    <div id="push"></div>
+    @Html.Partial("_Sitemap")
+</section>
+<footer id="footer" class="layout-section">@copyright</footer>
+
+@Html.Partial("NoScript")
+@RenderSection("Script", false)

@@ -1,0 +1,38 @@
+﻿/* FOOTER AND PUSH
+----------------------------------------------------------*/
+
+html, body, form { height: 100%; }
+
+@footer_margin_top: 40px;
+@footer_padding_top_bottom: 10px;
+@footer_height: 12px;
+@footer_push: @footer_margin_top + (@footer_padding_top_bottom * 2) + @footer_height;
+
+section#layout-container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -@footer_push;
+}
+
+div#push {
+	display: none;
+}
+footer#footer {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	div#push {
+		display: inherit;
+		height: @footer_push;
+	}
+	footer#footer {
+		display: inherit;
+		margin-top: @footer_margin_top;
+		padding: @footer_padding_top_bottom 0;
+		height: @footer_height;
+		text-align: center;
+		font-size: 0.7em;
+	}
+}

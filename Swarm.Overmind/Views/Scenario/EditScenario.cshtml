@@ -1,0 +1,64 @@
+﻿@using System.Web.Mvc.Html
+@using RestSharp
+@using Swarm.Overmind.Domain.Entity.Entities
+@model ScenarioModel
+<h2>
+@Resource.String("Editing", Model.Name)
+</h2>
+@using (Html.BeginForm("Upsert", "Scenario", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+            <td>@Html.ValidationMessageFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.VirtualUsers)</td>
+            <td>@Html.TextBoxFor(m => m.VirtualUsers)</td>
+            <td>@Html.ValidationMessageFor(m => m.VirtualUsers)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.SleepTime)</td>
+            <td>@Html.TextBoxFor(m => m.SleepTime)</td>
+            <td>@Html.ValidationMessageFor(m => m.SleepTime)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.RampUpTime)</td>
+            <td>@Html.TextBoxFor(m => m.RampUpTime)</td>
+            <td>@Html.ValidationMessageFor(m => m.RampUpTime)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.SamplingInterval)</td>
+            <td>@Html.TextBoxFor(m => m.SamplingInterval)</td>
+            <td>@Html.ValidationMessageFor(m => m.SamplingInterval)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.RequestTimeout)</td>
+            <td>@Html.TextBoxFor(m => m.RequestTimeout)</td>
+            <td>@Html.ValidationMessageFor(m => m.RequestTimeout)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Method)</td>
+            <td>@Html.DropDownListFor(m => m.Method, new SelectList(Enum.GetValues(typeof(Method))))</td>
+            <td>@Html.ValidationMessageFor(m => m.Method)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Endpoint)</td>
+            <td>@Html.TextBoxFor(m => m.Endpoint)</td>
+            <td>@Html.ValidationMessageFor(m => m.Endpoint)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.LogLevel)</td>
+            <td>@Html.DropDownListFor(m => m.LogLevel, new SelectList(Enum.GetValues(typeof(LogLevel))))</td>
+            <td>@Html.ValidationMessageFor(m => m.LogLevel)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.FileCode)</td>
+            <td>@Html.DropDownListFor(m => m.FileCode, Model.FilesList)</td>
+            <td>@Html.ValidationMessageFor(m => m.LogLevel)</td>
+        </tr>
+    </table>
+    <input name="Id" type="hidden" value="@Model.Id"/>
+    <input type="submit" value="@Resource.String("Save")"/>
+}

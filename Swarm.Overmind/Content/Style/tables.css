@@ -1,0 +1,47 @@
+﻿/* TABLES
+----------------------------------------------------------*/
+
+table { margin: 0 auto; }
+
+thead {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+th,
+td { 
+	padding: 5px 10px;
+	vertical-align: middle;
+}
+td input { 
+	vertical-align: middle;
+}
+
+table form input, table form textarea, table form button {
+	margin: 0;
+}
+
+tr.filter {
+    background-color: blueviolet;
+}
+
+.filterText {
+    width: 100%;
+}
+
+.filterableTable td     
+{
+    min-width: 100px;
+    width: auto;
+}
+
+.filterableTable 
+{
+    
+}
+
+.hideColumn {
+    padding: 2px;
+    background-color: whitesmoke;
+    float: right;     
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Swarm.Contracts.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Swarm.Contracts.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/RestSharp" />
+  <xs:import schemaLocation="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="LoadTestScenario">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfArrayOfstring" />
+      <xs:element minOccurs="0" name="Endpoint" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RestSharp" minOccurs="0" name="Method" type="q2:Method" />
+      <xs:element minOccurs="0" name="RequestTimeout" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="SamplingInterval" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Users" nillable="true" type="tns:VirtualUserSettings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadTestScenario" nillable="true" type="tns:LoadTestScenario" />
+  <xs:complexType name="VirtualUserSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:int" />
+      <xs:element minOccurs="0" name="RampTime" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="SleepTime" nillable="true" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VirtualUserSettings" nillable="true" type="tns:VirtualUserSettings" />
+</xs:schema>

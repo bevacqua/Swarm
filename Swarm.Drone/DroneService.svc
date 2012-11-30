@@ -1,0 +1,3 @@
+﻿<%@ ServiceHost 
+		Service="DroneService"
+		Factory="Swarm.Drone.Plumbing.ServiceHostFactory, Swarm.Drone" %>

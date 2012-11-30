@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="61a323e7-d728-499c-8925-3ff48399efac" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://drone.groupcommerce.com/DroneService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DroneService2.xsd" MetadataType="Schema" ID="58e06712-a2a7-4c31-a671-c3180bc0dba3" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DroneService21.xsd" MetadataType="Schema" ID="d38d81dc-78bf-40f7-87a6-5dec9e9c61a6" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DroneService22.xsd" MetadataType="Schema" ID="6bcc6788-2961-44cf-a5d6-61c328bb2b54" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DroneService23.xsd" MetadataType="Schema" ID="d7379335-7963-45f0-8b51-1242713af6d8" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DroneService1.disco" MetadataType="Disco" ID="3f64b6ab-7d09-4f0c-ba56-6e00aaa5a7c6" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?disco" />
+    <MetadataFile FileName="DroneService24.xsd" MetadataType="Schema" ID="7ceaf317-e389-4c40-ad9b-f973f76057ad" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DroneService1.wsdl" MetadataType="Wsdl" ID="3a8b2613-9003-47ac-aa8b-1f80e6d36f97" SourceId="1" SourceUrl="http://drone.groupcommerce.com/DroneService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

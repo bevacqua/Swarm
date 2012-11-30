@@ -1,0 +1,19 @@
+﻿@model ErrorViewModel
+<h1 class="error-title">@Resource.String("ErrorTitle")</h1>
+@if (!Model.Message.NullOrEmpty())
+{
+    <h2 class="error-description">@Model.Message</h2>
+}
+<section id="error-page">
+    <img id="servers" class="left" alt="" src='@Url.Content("~/image/error/servers.png")' />
+    <img id="nomnom-standing" alt="" src='@Url.Content("~/image/error/alone.png")' />
+    <aside id="error-content">
+        <header>@Resource.String("ErrorContentTitle")</header>
+        <p>@Resource.String("ErrorContentLineOne")</p>
+        <p>@Resource.String("ErrorContentLineTwo")</p>
+    </aside>
+    <footer>
+        <p class="apologies">@Resource.String("Apologies")</p>
+        <a href='@Url.Action("Index", "Home")'>@Resource.String("GoBack")</a>
+    </footer>
+</section>

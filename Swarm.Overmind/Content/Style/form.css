@@ -1,0 +1,84 @@
+﻿/* FORM, INPUT, BUTTON, AND ANCHOR ELEMENTS
+----------------------------------------------------------*/
+
+form legend {
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+form input, form textarea, form button {
+    margin-bottom: 10px;
+    margin-right: 3px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    display: inline-block;
+}
+
+form input[type=text],
+form input[type=email],
+form input[type=url],
+form input[type=password],
+form textarea { 
+    width: 75%; /* 225px on 300px */ 
+}
+
+form input[type=submit],
+form button.submit {
+    display: block;
+    text-align: center;
+    background-color: blueviolet; 
+    padding: 3px; 
+    color: whitesmoke;
+}
+
+
+
+/* MODEL VALIDATION ELEMENTS
+----------------------------------------------------------*/
+
+fieldset .field-validation-valid,
+fieldset .field-validation-error { font-size: 0.8em; }
+
+fieldset .field-validation-valid,
+fieldset .field-validation-error { /* noscript */
+    display: block;
+    margin-bottom: 15px;
+}
+
+fieldset .field-validation-valid.tooltip-icon,
+fieldset .field-validation-error.tooltip-icon { /* javascript enabled */
+    display: inline-block;
+    margin-bottom: 0;
+
+    background-image: url('/image/sprite/icons.png');
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+fieldset .field-validation-valid.model-validation {	/* javascript enabled, model validation (as in, rendered with the page) */
+	display: none; 
+}
+
+fieldset .field-validation-valid.tooltip-icon { background-position: -208px -192px; }
+fieldset .field-validation-error.tooltip-icon { background-position: -32px -192px; }
+
+.validation-summary {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #b22222;
+    text-align: center;
+}
+
+.validation-summary p { margin-bottom: 6px; }
+
+
+
+/* LARGE SCREEN MEDIA QUERIES
+----------------------------------------------------------*/
+
+@media only screen and (min-width: 768px) {
+    .validation-summary { margin-bottom: 25px; }
+}

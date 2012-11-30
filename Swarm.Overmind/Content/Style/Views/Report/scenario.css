@@ -1,0 +1,76 @@
+﻿.report .toolbox
+{
+	display: block;
+	text-align: right;
+}
+
+.report .abort
+{
+	display: inline-block;
+    text-align: center;
+    padding: 3px; 
+}
+
+.report .status
+{
+	display: inline-block;
+	font-size: 1.6em;
+	font-weight: bold;
+	padding: 4px;
+}
+
+.report .charts
+{
+	display: none;
+}
+
+.report .index
+{
+	margin: 15px 0;
+	display: block;
+	border: 1px solid ;
+	min-height: 50px;
+	padding: 6px;
+}
+
+.report .bookmark
+{
+	cursor: pointer;
+	display: inline-block;
+	padding: 10px;
+	margin: 3px;
+	background-color: blueviolet;
+	border: 1px solid darkviolet;
+	border-radius: 3px;
+	font-size: 1.2em;
+	color: white;
+}
+
+.report .bookmark:hover
+{
+	background-color: mediumpurple;
+	border: 1px solid mediumorchid;
+}
+
+.report .bookmark.selected
+{
+	background-color: darkmagenta;
+	border: 1px solid darkred;
+	color: ghostwhite;
+}
+
+.report .overall
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.report .index div, .report .overall > div
+{
+	display: inline-block;
+}
+
+ .report .overall > div
+ {
+ 	margin-top: 20px;
+ }

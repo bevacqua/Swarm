@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="title" content="@Title" />
+        <meta name="description" content="@Resource.Shared("Application", "Description")" />
+        <link href="@Url.Content("~/favicon.ico")" rel="shortcut icon" />
+		
+        <title>@Title</title>
+
+        @Html.Partial("_LayoutStyles")
+    </head>
+    <body id="top">
+        @RenderBody()
+    </body>
+</html>

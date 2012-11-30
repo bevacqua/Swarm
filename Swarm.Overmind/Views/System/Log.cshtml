@@ -1,0 +1,37 @@
+﻿@model IList<LogModel>
+<table id="syslogs" class="filterableTable">
+	<thead>
+		<tr>
+			<th>@Resource.String("Date")</th>
+			<th>@Resource.String("Level")</th>
+			<th>@Resource.String("Message")</th>
+			<th>@Resource.String("Thread")</th>
+			<th>@Resource.String("StackTrace")</th>
+			<th>@Resource.String("Logger")</th>
+			<th>@Resource.String("RequestUrl")</th>
+		</tr>
+		<tr class="filter">
+			<td><input class="filterText" type="text"/></td>
+			<td><input class="filterText" type="text"/></td>
+			<td><input class="filterText" type="text"/></td>
+			<td><input class="filterText" type="text"/></td>
+			<td><input class="filterText" type="text"/></td>
+			<td><input class="filterText" type="text"/></td>
+			<td><input class="filterText" type="text"/></td>
+		</tr>
+	</thead>
+    <tbody>
+		@foreach (LogModel entry in Model)
+		{
+			<tr>
+				<td>@entry.Date</td>
+				<td>@entry.Level</td>
+				<td>@entry.Message</td>
+				<td>@entry.Thread</td>
+				<td>@entry.Exception</td>
+				<td>@entry.Logger</td>
+				<td>@entry.RequestUrl</td>
+			</tr>
+		}
+	</tbody>
+</table>

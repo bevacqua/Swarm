@@ -1,0 +1,18 @@
+﻿@model IList<KeyValuePair<string, string>>
+<table>
+    <thead>
+        <tr>
+            <th>@Resource.String("Key")</th>
+            <th>@Resource.String("Value")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var setting in Model)
+        {
+            <tr>
+                <td>@setting.Key</td>
+                <td>@setting.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>

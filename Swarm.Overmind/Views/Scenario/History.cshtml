@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ScenarioExecutionModel>
+
+<table id="scenariosExec" class="clear">
+    <thead>
+		<tr>
+			<th>@Html.LabelFor(m => m.FirstOrDefault().Scenario)</th>
+			<th>@Html.LabelFor(m => m.FirstOrDefault().Started)</th>
+			<th>@Html.LabelFor(m => m.FirstOrDefault().Finished)</th>
+			<th>@Html.LabelFor(m => m.FirstOrDefault().Status)</th>
+		</tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+			<tr>
+				<td>@item.Scenario.Name</td>
+				<td>@item.Started.ToInvariantString()</td>
+				<td>@item.Finished</td>
+				<td>@item.Status.ToString()</td>
+				<td>
+					@using (Html.BeginForm("Scenario", "Report", FormMethod.Get))
+					{
+						<input type="hidden" name="id" value="@item.Id" />
+						<input type="submit" value="@Resource.String("Report")" />
+					}
+				</td>
+			</tr>
+        }
+    </tbody>
+</table>

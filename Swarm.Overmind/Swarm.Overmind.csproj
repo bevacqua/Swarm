@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C3C4F8C-DC67-4E7E-8435-667774FC043E}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Swarm.Overmind</RootNamespace>
+    <AssemblyName>Swarm.Overmind</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.3.0.5\lib\dotless.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler">
+      <HintPath>..\packages\MiniProfiler.2.0.2\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR">
+      <HintPath>..\packages\SignalR.Server.0.5.2\lib\net40\SignalR.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.AspNet">
+      <HintPath>..\packages\SignalR.Hosting.AspNet.0.5.2\lib\net40\SignalR.Hosting.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SignalR.Hosting.Common">
+      <HintPath>..\packages\SignalR.Hosting.Common.0.5.2\lib\net40\SignalR.Hosting.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Framework">
+      <HintPath>..\packages\SquishIt.0.8.7.1\lib\SquishIt.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SquishIt.Mvc">
+      <HintPath>..\packages\SquishIt.Mvc.0.9.0-alpha3\lib\SquishIt.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\.gitattributes">
+      <Link>.gitattributes</Link>
+    </Content>
+    <Content Include="..\.gitignore">
+      <Link>.gitignore</Link>
+    </Content>
+    <Content Include="Content\Script\Lib\highcharts\highcharts-more.js" />
+    <Content Include="Content\Script\Lib\highcharts\highcharts.js" />
+    <Content Include="Content\Script\Lib\highcharts\highcharts.src.js" />
+    <Content Include="Content\Script\Lib\highcharts\modules\canvas-tools.js" />
+    <Content Include="Content\Script\Lib\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Content\Script\Lib\highcharts\modules\data.js" />
+    <Content Include="Content\Script\Lib\highcharts\modules\data.src.js" />
+    <Content Include="Content\Script\Lib\highcharts\modules\exporting.js" />
+    <Content Include="Content\Script\Lib\highcharts\modules\exporting.src.js" />
+    <Content Include="Content\Script\Lib\highcharts\themes\dark-blue.js" />
+    <Content Include="Content\Script\Lib\highcharts\themes\dark-green.js" />
+    <Content Include="Content\Script\Lib\highcharts\themes\gray.js" />
+    <Content Include="Content\Script\Lib\highcharts\themes\grid.js" />
+    <Content Include="Content\Script\Lib\highcharts\themes\skies.js" />
+    <Content Include="Content\Script\Lib\jquery-1.8.0.js" />
+    <Content Include="Content\Script\Lib\jquery-1.8.0.min.js" />
+    <Content Include="Content\Script\o.init.js" />
+    <Content Include="Content\Script\o.realtime.js" />
+    <Content Include="Content\Script\Lib\jquery.color.js" />
+    <Content Include="Content\Script\Lib\json2.js" />
+    <Content Include="Content\Script\Lib\jquery.validate.js" />
+    <Content Include="Content\Script\jquery.validate.tooltip.js" />
+    <Content Include="Content\Script\jquery.tooltip.js" />
+    <Content Include="Content\Script\jquery.placeholder.js" />
+    <Content Include="Content\Script\Views\Report\scenario.js" />
+    <Content Include="Content\Script\Views\System\log.js" />
+    <Content Include="Content\Style\tables.css" />
+    <Content Include="Content\Style\Views\Report\scenario.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Style\controls.css" />
+    <Content Include="Content\Style\design.less" />
+    <Content Include="Content\Style\layout.footer.less" />
+    <Content Include="Content\Style\functions.less" />
+    <Content Include="Content\Style\layout.css" />
+    <Content Include="Content\Script\Lib\jquery.signalR-0.5.2.js" />
+    <Content Include="Content\Script\Lib\jquery.signalR-0.5.2.min.js" />
+    <Content Include="Views\Error\ChildAction.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Unhandled.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Resource\Localization.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Exception.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutHtml.cshtml" />
+    <Content Include="Views\Shared\_LayoutSections.cshtml" />
+    <Content Include="Views\Shared\_LayoutScripts.cshtml" />
+    <Content Include="Views\Shared\_LayoutStyles.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Xml\log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Xml\pages.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Error\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\NoScript.cshtml" />
+    <Content Include="Views\Shared\_Sitemap.cshtml" />
+    <Content Include="Views\web.config" />
+    <Content Include="Views\Shared\DisplayTemplates\String.cshtml" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Jobs\Index.cshtml" />
+    <Content Include="Views\Jobs\Schedule.cshtml" />
+    <Content Include="Views\System\Log.cshtml" />
+    <Content Include="Views\System\Log.js.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\AggregateException.cshtml" />
+    <Content Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\System\Environment.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Content\Script\Resources\Reporting.Designer.cs">
+      <DependentUpon>Reporting.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Plumbing\ApplicationInstaller.cs" />
+    <Compile Include="Content\Script\Resources\Common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Plumbing\Routing.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Error\Resources\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\Resources\NotFound.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotFound.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Error\Resources\Unhandled.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unhandled.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Jobs\Resources\Schedule.Designer.cs">
+      <DependentUpon>Schedule.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Jobs\Resources\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Report\Resources\Scenario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Scenario.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Scenario\Resources\History.Designer.cs">
+      <DependentUpon>History.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Scenario\Resources\EditScenario.Designer.cs">
+      <DependentUpon>EditScenario.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Resources\Application.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Application.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Resources\_Sitemap.Designer.cs">
+      <DependentUpon>_Sitemap.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\Shared\Resources\NoScript.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoScript.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Shared\Resources\_LayoutSections.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_LayoutSections.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\System\Resources\Index.Designer.cs">
+      <DependentUpon>Index.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Views\System\Resources\Log.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Image\Error\alone.png" />
+    <Content Include="Image\Error\server.png" />
+    <Content Include="Image\Error\servers.png" />
+    <Content Include="Image\Error\sign.png" />
+    <Content Include="Content\Script\o.core.js" />
+    <Content Include="Content\Script\o.extensions.js" />
+    <Content Include="Content\Script\Lib\html5shiv.js" />
+    <Content Include="Content\Script\jquery.extensions.js" />
+    <Content Include="Content\Script\Lib\jquery.form.js" />
+    <Content Include="Content\Script\Lib\jquery.validate.min.js" />
+    <Content Include="Content\Script\Lib\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\Script\Lib\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Script\Lib\modernizr-2.5.3.min.js" />
+    <Content Include="Content\Script\Lib\modernizr.js" />
+    <Content Include="Content\Style\elements.css" />
+    <Content Include="Content\Style\form.css" />
+    <Content Include="Content\Style\misc.css" />
+    <Content Include="Content\Style\reset.css" />
+    <Content Include="Content\Style\Views\Error\all.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Script\Resources\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Script\Resources\Reporting.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Reporting.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Error\Resources\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Error\Resources\NotFound.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotFound.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Error\Resources\Unhandled.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Unhandled.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Jobs\Resources\Schedule.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Schedule.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Jobs\Resources\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Report\Resources\Scenario.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Scenario.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Scenario\Resources\History.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>History.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Scenario\Resources\EditScenario.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EditScenario.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Resources\Application.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Resources\_Sitemap.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_Sitemap.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Resources\NoScript.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NoScript.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Shared\Resources\_LayoutSections.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>_LayoutSections.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\System\Resources\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\System\Resources\Log.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Log.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Swarm.Common.Mvc\Swarm.Common.Mvc.csproj">
+      <Project>{BE9DCCD0-D5AA-4AFF-9C42-34E325D1FD7E}</Project>
+      <Name>Swarm.Common.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Common\Swarm.Common.csproj">
+      <Project>{8069E6E0-91C4-4BC2-A490-80A5674F6CFC}</Project>
+      <Name>Swarm.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Contracts\Swarm.Contracts.csproj">
+      <Project>{C2414DD4-BBC5-4063-AAF9-9AC1BC35409D}</Project>
+      <Name>Swarm.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Extensions.CommonLogging\Swarm.Extensions.CommonLogging.csproj">
+      <Project>{89562EED-6323-4739-9557-2D4F5AA69F8F}</Project>
+      <Name>Swarm.Extensions.CommonLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Overmind.Domain.Entity\Swarm.Overmind.Domain.Entity.csproj">
+      <Project>{CF7CFD5E-9215-4014-8647-AE906A87A5A3}</Project>
+      <Name>Swarm.Overmind.Domain.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Overmind.Domain\Swarm.Overmind.Domain.csproj">
+      <Project>{5B0A6F54-047F-4CFB-BB8C-056DBB4EE85E}</Project>
+      <Name>Swarm.Overmind.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Overmind.Model\Swarm.Overmind.Model.csproj">
+      <Project>{C7BE64F2-B820-4B8D-8823-0DE436FCBA60}</Project>
+      <Name>Swarm.Overmind.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swarm.Overmind.Windsor\Swarm.Overmind.Windsor.csproj">
+      <Project>{64E9FD64-74DA-4FEE-9611-722D475B6312}</Project>
+      <Name>Swarm.Overmind.Windsor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Link>README.md</Link>
+    </None>
+    <Content Include="Views\FileUpload\Add.cshtml" />
+    <Content Include="Views\FileUpload\Add.js.cshtml" />
+    <Content Include="Views\Scenario\Index.cshtml" />
+    <Content Include="Views\Scenario\EditScenario.cshtml" />
+    <Content Include="Views\Report\Scenario.cshtml" />
+    <Content Include="Views\Report\Scenario.js.cshtml" />
+    <Content Include="Views\Scenario\History.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Uploads\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3092</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://overmind.groupcommerce.com</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

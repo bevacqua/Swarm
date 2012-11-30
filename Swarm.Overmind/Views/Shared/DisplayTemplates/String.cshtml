@@ -1,0 +1,8 @@
+﻿@model String
+@{
+    string[] lines = Model.SplitOnNewLines();
+    foreach (string line in lines)
+    {
+        <p>@line.Trim()</p>
+    }
+}

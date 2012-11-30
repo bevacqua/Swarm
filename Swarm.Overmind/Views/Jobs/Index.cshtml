@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ScheduledJobModel>
+<section class="right" >
+    <a href="@Url.Action("Schedule")">@Resource.String("ScheduleJob")</a>
+</section>
+<table id="sysjobs" class="clear">
+    <thead>
+        <tr>
+            <th>@Resource.String("Guid")</th>
+            <th>@Resource.String("Name")</th>
+            <th>@Resource.String("StartTime")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ScheduledJobModel job in Model)
+        {
+            <tr>
+                <td>@job.Guid</td>
+                <td>@job.Name</td>
+                <td>@job.StartTime</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,44 @@
+﻿@using SquishIt.Framework.Minifiers.JavaScript
+@using StackExchange.Profiling
+@using Swarm.Common.Configuration
+@{
+    string[] scriptLinks = new[]
+    {
+        Url.Content("~/content/script/lib/json2.js"),
+        Url.Content("~/content/script/lib/jquery.validate.min.js"),
+        Url.Content("~/content/script/lib/jquery.validate.unobtrusive.min.js"),
+        Url.Content("~/content/script/lib/jquery.form.js"),
+        Url.Content("~/content/script/lib/jquery.color.js"),
+        Url.Content("~/content/script/lib/jquery.signalr-0.5.2.js"),
+        Url.Content("~/content/script/lib/highcharts/highcharts.js"),
+        Url.Content("~/content/script/o.extensions.js"),
+        Url.Content("~/content/script/jquery.extensions.js"),
+        Url.Content("~/content/script/jquery.validate.tooltip.js"),
+        Url.Content("~/content/script/jquery.placeholder.js"),
+        Url.Content("~/content/script/jquery.tooltip.js"),
+        Url.Content("~/content/script/o.core.js"),
+        Url.Content("~/content/script/o.realtime.js"),
+        Url.Content("~/content/script/o.init.js"),
+        Url.Content("~/content/script/views/system/log.js"),
+        Url.Content("~/content/script/views/report/scenario.js"),
+    };
+}
+@{
+@* we don't bundle external javascript links nor localization messages. *@
+    const string version = "1.8.0";
+    string extension = Config.Mvc.Debug.IgnoreMinification ? "js" : "min.js";
+    string jQueryExternal = "//ajax.googleapis.com/ajax/libs/jquery/{0}/jquery.{1}".FormatWith(version, extension);
+    string jQueryLocal = @Url.Content("~/content/script/lib/jquery-{0}.{1}".FormatWith(version, extension));
+}
+<script src="@jQueryExternal"> </script>
+<script>!window.jQuery && document.write(unescape("%3Cscript src='@jQueryLocal'%3E%3C/script%3E"))</script>
+<script src="@Url.Action("Localization", "Resource")"></script>
+@(Bundle.JavaScript()
+    .Add(scriptLinks)
+    .WithoutTypeAttribute()
+    .WithMinifier<YuiMinifier>()
+    .WithConfiguration()
+    .MvcRender("~/all.js?_=1")
+)
+@JavaScript.Emit()
+@MiniProfiler.RenderIncludes(useExistingjQuery: true)

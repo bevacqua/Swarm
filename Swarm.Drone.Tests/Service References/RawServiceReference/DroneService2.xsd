@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RestSharp" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RestSharp" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Method">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GET" />
+      <xs:enumeration value="POST" />
+      <xs:enumeration value="PUT" />
+      <xs:enumeration value="DELETE" />
+      <xs:enumeration value="HEAD" />
+      <xs:enumeration value="OPTIONS" />
+      <xs:enumeration value="PATCH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Method" nillable="true" type="tns:Method" />
+</xs:schema>

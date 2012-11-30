@@ -1,0 +1,8 @@
+﻿@model ErrorViewModel
+<section class="rendering-error">
+    <header>@Model.Message</header>
+    @if (Model.DisplayException)
+    {
+		@Html.DisplayFor(m => m.Exception)
+	}
+</section>

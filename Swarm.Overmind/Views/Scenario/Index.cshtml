@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ScenarioModel>
+@using (Html.BeginForm("Create", "Scenario", FormMethod.Get))
+{
+    <input type="submit" value="Create New"/>
+}
+<table id="scenarios" class="clear">
+    <thead>
+        <tr>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().Id)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().Name)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().VirtualUsers)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().SleepTime)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().RampUpTime)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().SamplingInterval)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().RequestTimeout)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().LogLevel)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ScenarioModel scenario in Model)
+        {
+            <tr>
+                <td>@scenario.Id</td>
+                <td>@scenario.Name</td>
+                <td>@scenario.VirtualUsers</td>
+                <td>@scenario.SleepTime.GetValueOrDefault()</td>
+                <td>@scenario.RampUpTime.GetValueOrDefault()</td>
+                <td>@scenario.SamplingInterval.GetValueOrDefault()</td>
+                <td>@scenario.RequestTimeout.GetValueOrDefault()</td>
+                <td>@scenario.LogLevel</td>
+                <td>
+                    @using (Html.BeginForm("Edit", "Scenario", FormMethod.Post))
+                    {
+                        <input type="hidden" name="id" value="@scenario.Id" />
+                        <input type="submit" value="Edit" />
+                    }
+                </td>
+                <td>
+                    @using (Html.BeginForm("Run", "Scenario", FormMethod.Post))
+                    {
+                        <input type="hidden" name="Id" value="@scenario.Id" />
+                        <input type="submit" value="Run" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

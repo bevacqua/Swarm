@@ -1,0 +1,27 @@
+﻿@model IEnumerable<JobModel>
+<header class="validation-summary">
+    <p>@Html.ValidationMessage("JobKey")</p>
+</header>
+<table>
+    <thead>
+        <tr>
+            <th>@Resource.String("Name")</th>
+            <th>@Resource.String("Actions")</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (JobModel entry in Model)
+        {
+            <tr>
+                <td>@entry.Name</td>
+                <td>
+                    @using (Html.BeginForm("Schedule", "Jobs", FormMethod.Post))
+                    {
+                        <input type="hidden" name="guid" value="@entry.Guid" />
+                        <input type="submit" value="@Resource.String("Schedule")" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
